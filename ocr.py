@@ -29,7 +29,7 @@ class WindowsOCR:
             return
         dependency = self.root / 'ocr_dependencies'
         if not (dependency / 'rapidocr_onnxruntime').is_dir():
-            raise RuntimeError('本地备用 OCR 未随程序安装，请使用完整便携包')
+            raise RuntimeError('本地备用 OCR 未安装，请在项目目录按 README 安装 requirements-ocr.txt 到 ocr_dependencies')
         if str(dependency) not in sys.path:
             sys.path.insert(0,str(dependency))
         try:
@@ -48,7 +48,7 @@ class WindowsOCR:
                 utils.SessionOptions=original
             self.info['fallback_available']=True
         except Exception as error:
-            raise RuntimeError('本地备用 OCR 无法加载，请检查便携包是否完整：'+str(error)) from None
+            raise RuntimeError('本地备用 OCR 无法加载，请检查 OCR 依赖安装及微软 VC++ x64 运行库：'+str(error)) from None
 
     def recognize_line(self, image):
         """Offline recognition-only pass, returning text and confidence."""

@@ -22,16 +22,16 @@ flowchart LR
 
 `.github/workflows/check.yml` 仅运行模拟网络与状态检查，不启动实际手机或调用真实 API；CI 结果不能替代现场验收。
 
-## 便携包构建
+## 源码包构建
 
-`build_share.py` 接受完整 Python 3.13 目录与官方 scrcpy 5.0.1 Windows x64 目录，依赖和 OCR 模型应先准备齐全。
+`build_share.py` 只按明确文件清单打包本项目源码、说明、图标及测试，不复制运行环境、第三方软件、模型或用户数据。无需提供 Python/scrcpy 安装目录。
 
 ```powershell
-python build_share.py --python-root 'D:\tools\Python313' --scrcpy-root 'D:\tools\scrcpy-win64-v5.0.1'
+python build_share.py
 ```
 
-以上路径为示例。输出为 `release/<版本>/`。已有输出目录不会覆盖。明确文件列表排除本地配置、缓存、诊断和个人截图。
+输出为 `release/<版本>/` 中的源码 ZIP 和 SHA256.txt；已有输出文件不会覆盖。依赖清单仅描述用户自行安装的组件，ZIP 不包含已安装的 `ocr_dependencies` 或 `.venv`。
 
-发布二进制前仍需检查第三方完整许可证、模型来源、动态库及相应源码要求，见 THIRD_PARTY_NOTICES.md；现有构建脚本的复制范围不自动证明这些要求已满足。
+公开发布采用源码加安装说明。安装软件由用户直接从对应上游获取，项目提供来源链接和本地自检。不要上传旧完整便携包。若将来决定再分发第三方二进制，需重新核对对应版本的许可证、模型来源、动态库及相应源码要求，见 THIRD_PARTY_NOTICES.md。
 
 主项目代码使用 MIT；不要给第三方组件重新许可。Release 与源码必须对应，改代码后重新构建并记录 SHA256、验证范围和未验收项。大模型、运行环境和投屏工具不放进普通 Git 提交。
