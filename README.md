@@ -19,7 +19,7 @@
 
 ## 下载和使用
 
-公开仓库和 Release 只提供本助手源码、图标、测试与说明，不捆绑 Python、投屏软件、第三方库或 OCR 模型。当前尚未发布公开下载地址。用户从上游自行安装依赖；本项目保留来源说明和依赖清单。
+源码已公开在 [sanmajiao/ai-vocab-assistant](https://github.com/sanmajiao/ai-vocab-assistant)。在仓库页面选择 **Code → Download ZIP** 下载源码，或使用 Git 克隆。发布内容只包含本助手源码、图标、测试与说明，不捆绑 Python、投屏软件、第三方库或 OCR 模型。用户从上游自行安装依赖；本项目保留来源说明和依赖清单。
 
 1. 完整解压到可写目录，勿在压缩包内直接运行。
 2. 通过 scrcpy 或其他投屏软件显示手机画面。

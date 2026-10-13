@@ -8,7 +8,7 @@
 - 手动重试重新截图，支持补充本题前缀和长度。
 - 系统中文 OCR 不可用时使用独立离线模型；密钥在本机加密。
 
-当前准备状态：拟发布公开仓库 sanmajiao/ai-vocab-assistant，项目代码使用 MIT。尚未创建远程仓库或 Release。用户已确定公开包只含助手自身源码和说明，不捆绑其他作者的软件、运行环境、库或模型。
+源码已于 2026-10-13 上传公开仓库 [sanmajiao/ai-vocab-assistant](https://github.com/sanmajiao/ai-vocab-assistant)，项目代码使用 MIT。可通过 Code → Download ZIP 获取源码；尚未创建单独的 GitHub Release。公开包只含助手自身源码和说明，不捆绑其他作者的软件、运行环境、库或模型。
 
 用户自行从官方渠道安装 Python、投屏软件和微软 VC++ x64 运行库，按依赖清单安装 OCR 及基础库。本项目提供完整步骤和本地自检，不上传既有完整便携版；第三方归属及链接保留在说明中。
 
