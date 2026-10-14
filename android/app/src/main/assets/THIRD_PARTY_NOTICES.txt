@@ -1,0 +1,20 @@
+AI Vocabulary Assistant Android preview
+
+Project-authored source: MIT, https://github.com/sanmajiao/ai-vocab-assistant/blob/main/LICENSE
+
+Google ML Kit text recognition (Latin / Chinese 16.0.1) and bundled models:
+https://developers.google.com/ml-kit/vision/text-recognition/v2/android
+https://developers.google.com/ml-kit/terms
+https://developers.google.com/terms
+These Google SDKs/models are governed by their own terms, not this project's MIT license.
+Input images and OCR outputs are processed on-device. ML Kit may contact Google
+for updates and transmit performance/utilization metrics as described in its terms.
+
+AndroidX, Google open-source support libraries, Kotlin standard library and
+other transitive dependencies retain their individual licenses and notices.
+Apache License 2.0: https://www.apache.org/licenses/LICENSE-2.0
+See DEPENDENCY_LICENSE_DECLARATIONS.txt, UPSTREAM_LICENSE_NOTICES.txt,
+android/THIRD_PARTY.md and generated runtime dependency inventory.
+
+Screenshots are not uploaded by this application. Only the current extracted
+question text/options/hints are sent to the official DeepSeek API on manual request.

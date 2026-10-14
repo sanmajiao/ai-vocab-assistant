@@ -1,0 +1,26 @@
+name: Android checks
+on:
+  push:
+    paths: ['android/**', '.github/workflows/android.yml']
+  pull_request:
+    paths: ['android/**', '.github/workflows/android.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Ensure Android SDK components
+        run: $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
+      - name: Unit tests, APK build and lint
+        working-directory: android
+        run: bash ./gradlew --no-daemon --console=plain testDebugUnitTest assembleDebug lintDebug

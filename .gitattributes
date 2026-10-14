@@ -1,9 +1,2 @@
-* text=auto
-*.py text eol=lf
-*.md text eol=lf
-*.yml text eol=lf
-*.txt text eol=lf
-LICENSE text eol=lf
-*.ps1 text eol=crlf
-*.vbs text eol=crlf
-*.ico binary
+# Preserve the verified Android source and bundled notice bytes across checkouts.
+android/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

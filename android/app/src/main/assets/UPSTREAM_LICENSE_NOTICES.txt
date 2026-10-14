@@ -1,0 +1,1 @@
+No separate LICENSE/NOTICE text found in the resolved runtime archives. See dependency license declarations and upstream terms.

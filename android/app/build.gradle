@@ -1,0 +1,21 @@
+plugins { id 'com.android.application' }
+android {
+ namespace 'com.sanmajiao.aivocab'
+ compileSdk 35
+ defaultConfig { applicationId 'com.sanmajiao.aivocab'; minSdk 26; targetSdk 35; versionCode 8; versionName '0.1.7-preview' }
+ compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+ buildTypes { release { minifyEnabled false } }
+ testOptions { unitTests.returnDefaultValues = true }
+}
+dependencies {
+ implementation 'com.google.mlkit:text-recognition:16.0.1'
+ implementation 'com.google.mlkit:text-recognition-chinese:16.0.1'
+ testImplementation 'junit:junit:4.13.2'
+}
+tasks.register('runtimeInventory') {
+ doLast {
+  def entries = configurations.debugRuntimeClasspath.resolvedConfiguration.resolvedArtifacts
+    .collect { it.moduleVersion.id.toString() }.unique().sort()
+  file('src/main/assets/RUNTIME_DEPENDENCIES.txt').text = entries.join('\n') + '\n'
+ }
+}
